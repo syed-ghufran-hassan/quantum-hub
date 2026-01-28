@@ -1,149 +1,36 @@
-# StackHub - DeFi Platform on Stacks
+# project-omega-hub
 
-![Stacks Connected](https://img.shields.io/badge/Stacks-Connected-purple.svg)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Version](https://img.shields.io/badge/version-1.0.0-orange)
 
-A multi-service DeFi platform built on the Stacks blockchain with 4 fee-generating smart contracts.
+## Overview
 
-## 🚀 Live on Mainnet
+Project Omega Hub is a scalable, centralized orchestration layer designed to streamline microservices communication and state management. It serves as the backbone for high-throughput distributed systems.
 
-All contracts are deployed and verified on Stacks Mainnet:
+## Key Features
 
-| Contract | Address | Description |
-|----------|---------|-------------|
-| NFT Marketplace | `SP3FKNEZ86RG5RT7SZ5FBRGH85FZNG94ZH1MCGG6N.stackhub-nft-marketplace` | Mint, list, buy NFTs (1.25% platform fee) |
-| Token Launchpad | `SP3FKNEZ86RG5RT7SZ5FBRGH85FZNG94ZH1MCGG6N.stackhub-token-launchpad` | Create custom tokens (5 STX fee) |
-| Staking Vault | `SP3FKNEZ86RG5RT7SZ5FBRGH85FZNG94ZH1MCGG6N.stackhub-staking-vault` | Stake STX (0.5% / 2.5% withdrawal fees) |
-| Service Registry | `SP3FKNEZ86RG5RT7SZ5FBRGH85FZNG94ZH1MCGG6N.stackhub-service-registry` | Register services (2.5 STX + 1.5% tx fee) |
+- **Orchestration**: Centralized control plane for microservices.\n- **Scalability**: Horizontally scalable architecture.\n- **Resilience**: Built-in fault tolerance and retry mechanisms.\n- **Monitoring**: Real-time metrics and health checks.
 
-## 📁 Project Structure
+## Getting Started
 
-```
-stackhub/
-├── stackhub-contracts/     # Clarity smart contracts
-│   ├── contracts/          # Contract source files
-│   └── tests/              # Vitest unit tests
-├── frontend/               # Next.js web application
-│   ├── src/
-│   │   ├── app/            # App router pages
-│   │   ├── components/     # React components
-│   │   └── config/         # Contract configurations
-│   └── public/             # Static assets
-└── README.md
-```
+### Prerequisites
 
-## 🛠️ Smart Contracts
+- Node.js v18+
+- npm v9+
 
-### NFT Marketplace
-- **Mint NFTs** with custom metadata URI
-- **List NFTs** for sale at any price
-- **Buy NFTs** with automatic fee distribution
-- Platform fee: **1.25%** on all sales
-
-### Token Launchpad
-- **Create custom tokens** with name, symbol, decimals
-- **Mint additional tokens** (owner only)
-- **Transfer & burn** tokens
-- Creation fee: **5 STX**
-
-### Staking Vault
-- **Stake STX** to earn rewards
-- **Request unstake** after lock period
-- Normal withdrawal fee: **0.5%**
-- Early withdrawal fee: **2.5%**
-
-### Service Registry
-- **Register services** with description and price
-- **Pay for services** through the platform
-- Listing fee: **2.5 STX**
-- Transaction fee: **1.5%**
-
-## 🧪 Running Tests
+### Installation
 
 ```bash
-cd stackhub-contracts
+git clone https://github.com/harobedjosh-alt/project-omega-hub.git
+cd project-omega-hub
 npm install
-npm test
 ```
 
-All 28 tests should pass.
+## Contributing
 
-## 🌐 Frontend Setup
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+## License
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
-
-## 🔧 Technologies
-
-- **Smart Contracts**: Clarity (version 4)
-- **Testing**: Clarinet SDK + Vitest
-- **Frontend**: Next.js 16 + React 19
-- **Stacks Wallet**: @stacks/connect (Leather/Hiro Wallet)
-- **EVM Wallet**: Reown AppKit + Wagmi (MetaMask, WalletConnect, etc.)
-- **Networks**: Stacks Mainnet + EVM chains (Ethereum, Arbitrum, Optimism, Polygon, Base)
-
-## 🔐 Wallet Integration
-
-StackHub supports multiple wallet types:
-
-### Stacks Wallets
-- Leather Wallet
-- Hiro Wallet
-- Xverse
-
-### EVM Wallets (via Reown AppKit)
-- MetaMask
-- WalletConnect
-- Coinbase Wallet
-- Social logins (Google, Discord, etc.)
-
-To enable EVM wallet support, get a project ID from [Reown Cloud](https://cloud.reown.com) and add it to your `.env.local`:
-
-```bash
-NEXT_PUBLIC_REOWN_PROJECT_ID=your_project_id_here
-```
-
-## 📜 License
-
-MIT
-
-## 🔗 Links
-
-- [Stacks Explorer](https://explorer.hiro.so)
-- [Clarinet Documentation](https://docs.hiro.so/clarinet)
-- [Stacks.js Documentation](https://docs.hiro.so/stacks.js)
-
-## Status
-Active development.
-
-### Section 1
-Added detail about feature 1 to ensure clarity for users.
-
-### Section 2
-Added detail about feature 2 to ensure clarity for users.
-
-### Section 3
-Added detail about feature 3 to ensure clarity for users.
-
-### Section 4
-Added detail about feature 4 to ensure clarity for users.
-
-### Section 5
-Added detail about feature 5 to ensure clarity for users.
-
-### Section 6
-Added detail about feature 6 to ensure clarity for users.
-
-### Section 7
-Added detail about feature 7 to ensure clarity for users.
-
-### Section 8
-Added detail about feature 8 to ensure clarity for users.
-
-### Section 9
-Added detail about feature 9 to ensure clarity for users.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
