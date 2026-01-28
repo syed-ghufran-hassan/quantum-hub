@@ -44,3 +44,15 @@ coverage/
 *.log
 *.cache
 .turbo
+node_modules/
+.env
+dist/
+temp_dir_1/
+temp_dir_2/
+temp_dir_3/
+temp_dir_4/
+temp_dir_5/
+temp_dir_6/
+temp_dir_7/
+temp_dir_8/
+temp_dir_9/
