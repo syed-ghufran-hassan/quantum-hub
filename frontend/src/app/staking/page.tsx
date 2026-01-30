@@ -72,13 +72,21 @@ export default function StakingPage() {
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Amount (STX)</label>
-              <input
-                type="number"
-                value={stakeAmount}
-                onChange={(e) => setStakeAmount(e.target.value)}
-                placeholder="100"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
+              <div className="relative">
+                <input
+                  type="number"
+                  value={stakeAmount}
+                  onChange={(e) => setStakeAmount(e.target.value)}
+                  placeholder="100"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                />
+                <button 
+                  className="absolute right-2 top-2 text-xs bg-green-100 text-green-700 px-2 py-1 rounded hover:bg-green-200"
+                  onClick={() => alert("Insufficient balance loaded")} // Placeholder behavior
+                >
+                  MAX
+                </button>
+              </div>
             </div>
             <button
               onClick={handleStake}
