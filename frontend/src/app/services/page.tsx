@@ -41,10 +41,12 @@ export default function ServicesPage() {
    */
   const handlePay = async () => {
     if (!serviceId) return alert("Please enter service ID");
+    const id = parseInt(serviceId);
+    if (isNaN(id) || id < 0) return alert("Invalid Service ID");
     
     setIsPending(true);
     try {
-      await payForService(parseInt(serviceId));
+      await payForService(id);
       setServiceId("");
     } finally {
       setIsPending(false);
