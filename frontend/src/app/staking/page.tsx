@@ -13,6 +13,7 @@ export default function StakingPage() {
   const { connected } = useWallet();
   const [stakeAmount, setStakeAmount] = useState("");
   const [unstakeAmount, setUnstakeAmount] = useState("");
+  const [isPending, setIsPending] = useState(false);
 
   /**
    * Handles staking amount conversion and contract call.
@@ -22,9 +23,14 @@ export default function StakingPage() {
     const val = parseFloat(stakeAmount);
     if (isNaN(val) || val <= 0) return alert("Amount must be positive");
     
-    const amount = val * 1000000; // Convert to microstacks
-    await stakeSTX(amount);
-    setStakeAmount("");
+    setIsPending(true);
+    try {
+      const amount = val * 1000000; // Convert to microstacks
+      await stakeSTX(amount);
+      setStakeAmount("");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   /**
@@ -35,9 +41,14 @@ export default function StakingPage() {
     const val = parseFloat(unstakeAmount);
     if (isNaN(val) || val <= 0) return alert("Amount must be positive");
 
-    const amount = val * 1000000;
-    await requestUnstake(amount);
-    setUnstakeAmount("");
+    setIsPending(true);
+    try {
+      const amount = val * 1000000;
+      await requestUnstake(amount);
+      setUnstakeAmount("");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   if (!connected) {
@@ -71,9 +82,10 @@ export default function StakingPage() {
             </div>
             <button
               onClick={handleStake}
-              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all"
+              disabled={isPending}
+              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all disabled:opacity-50"
             >
-              Stake STX
+              {isPending ? "Staking..." : "Stake STX"}
             </button>
           </div>
         </div>
@@ -94,9 +106,10 @@ export default function StakingPage() {
             </div>
             <button
               onClick={handleUnstake}
-              className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-medium hover:from-orange-700 hover:to-yellow-700 transition-all"
+              disabled={isPending}
+              className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-medium hover:from-orange-700 hover:to-yellow-700 transition-all disabled:opacity-50"
             >
-              Request Unstake
+              {isPending ? "Requesting..." : "Request Unstake"}
             </button>
           </div>
         </div>
