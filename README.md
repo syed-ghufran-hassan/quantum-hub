@@ -1,4 +1,4 @@
-# project-omega-hub
+# StackHub
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -6,31 +6,42 @@
 
 ## Overview
 
-Project Omega Hub is a scalable, centralized orchestration layer designed to streamline microservices communication and state management. It serves as the backbone for high-throughput distributed systems.
+StackHub is a comprehensive Stacks-based decentralized application (dApp) designed to empower the Bitcoin economy. It integrates a suite of DeFi and utility services into a single platform.
 
 ## Key Features
 
-- **Orchestration**: Centralized control plane for microservices.\n- **Scalability**: Horizontally scalable architecture.\n- **Resilience**: Built-in fault tolerance and retry mechanisms.\n- **Monitoring**: Real-time metrics and health checks.
+- **NFT Marketplace**: Mint, list, and trade NFTs with low platform fees.
+- **Service Registry**: Decentralized registry for service providers to list offerings and receive payments on-chain.
+- **Staking Vault**: Secure STX staking mechanism with time-locked rewards.
+- **Token Launchpad**: One-click deployment of SIP-010 fungible tokens.
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js v18+
-- npm v9+
+- Clarinet (for contract development)
+- Stacks Wallet (Leather, Xverse)
 
 ### Installation
 
-```bash
-git clone https://github.com/harobedjosh-alt/project-omega-hub.git
-cd project-omega-hub
-npm install
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/stackhub/stackhub.git
+   cd stackhub
+   ```
 
-## Contributing
+2. Install Frontend Dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+3. Run the Development Server:
+   ```bash
+   npm run dev
+   ```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
