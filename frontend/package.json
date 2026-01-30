@@ -1,7 +1,7 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "description": "Next.js Frontend for StackHub Interface",
+  "name": "stackhub-frontend",
+  "version": "1.0.0",
+  "description": "Official Frontend for StackHub dApp",
   "author": "StackHub Team",
   "license": "MIT",
   "private": true,
