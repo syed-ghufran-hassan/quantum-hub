@@ -1,6 +1,7 @@
 "use client";
 
 import { useWallet } from "@/context/WalletContext";
+import { truncateAddress } from "@/lib/utils";
 
 /**
  * Dual-wallet connection button component.
@@ -24,7 +25,7 @@ export function ConnectButton() {
       {stacksConnected ? (
         <div className="flex items-center gap-2">
           <span className="text-xs text-purple-600 bg-purple-100 px-2 py-1 rounded-lg">
-            STX: {stacksAddress?.slice(0, 4)}...{stacksAddress?.slice(-4)}
+            STX: {truncateAddress(stacksAddress || "")}
           </span>
           <button
             onClick={disconnectStacks}
@@ -47,7 +48,7 @@ export function ConnectButton() {
       {evmConnected ? (
         <div className="flex items-center gap-2">
           <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-lg">
-            EVM: {evmAddress?.slice(0, 4)}...{evmAddress?.slice(-4)}
+            EVM: {truncateAddress(evmAddress || "")}
           </span>
           <button
             onClick={disconnectEvm}
@@ -77,7 +78,7 @@ export function StacksConnectButton() {
     return (
       <div className="flex items-center gap-3">
         <span className="text-sm text-gray-600 bg-gray-100 px-3 py-1.5 rounded-lg">
-          {stacksAddress?.slice(0, 6)}...{stacksAddress?.slice(-4)}
+          {truncateAddress(stacksAddress || "", 6, 4)}
         </span>
         <button
           onClick={disconnectStacks}
