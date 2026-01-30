@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useWallet } from "@/context/WalletContext";
 import { stakeSTX, requestUnstake } from "@/lib/contracts";
+import { toMicroStx } from "@/lib/utils";
 
 /**
  * Staking Vault Page.
@@ -25,7 +26,7 @@ export default function StakingPage() {
     
     setIsPending(true);
     try {
-      const amount = val * 1000000; // Convert to microstacks
+      const amount = toMicroStx(val); // Convert to microstacks
       await stakeSTX(amount);
       setStakeAmount("");
     } finally {
@@ -43,7 +44,7 @@ export default function StakingPage() {
 
     setIsPending(true);
     try {
-      const amount = val * 1000000;
+      const amount = toMicroStx(val);
       await requestUnstake(amount);
       setUnstakeAmount("");
     } finally {
