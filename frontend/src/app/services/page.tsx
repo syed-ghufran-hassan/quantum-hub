@@ -14,6 +14,7 @@ export default function ServicesPage() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [serviceId, setServiceId] = useState("");
+  const [isPending, setIsPending] = useState(false);
 
   /**
    * Validates input and registers a new service.
@@ -21,10 +22,18 @@ export default function ServicesPage() {
    */
   const handleRegister = async () => {
     if (!title || !price) return alert("Please fill all fields");
-    const priceInMicrostacks = parseFloat(price) * 1000000;
-    await registerService(title, priceInMicrostacks);
-    setTitle("");
-    setPrice("");
+    const val = parseFloat(price);
+    if (isNaN(val) || val <= 0) return alert("Price must be positive");
+
+    setIsPending(true);
+    try {
+      const priceInMicrostacks = val * 1000000;
+      await registerService(title, priceInMicrostacks);
+      setTitle("");
+      setPrice("");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   /**
@@ -32,8 +41,16 @@ export default function ServicesPage() {
    */
   const handlePay = async () => {
     if (!serviceId) return alert("Please enter service ID");
-    await payForService(parseInt(serviceId));
-    setServiceId("");
+    const id = parseInt(serviceId);
+    if (isNaN(id) || id < 0) return alert("Invalid Service ID");
+    
+    setIsPending(true);
+    try {
+      await payForService(id);
+      setServiceId("");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   if (!connected) {
@@ -68,13 +85,21 @@ export default function ServicesPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Price (STX)</label>
-              <input
-                type="number"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                placeholder="100"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
+              <div className="relative">
+                <input
+                  type="number"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  placeholder="100"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                />
+                <button 
+                  className="absolute right-2 top-2 text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded hover:bg-orange-200"
+                  onClick={() => alert("Market price fetcher unimplemented")}
+                >
+                  ESTIMATE
+                </button>
+              </div>
             </div>
             <div className="p-3 bg-orange-50 rounded-lg">
               <div className="flex justify-between text-sm">
@@ -84,9 +109,10 @@ export default function ServicesPage() {
             </div>
             <button
               onClick={handleRegister}
-              className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-medium hover:from-orange-700 hover:to-yellow-700 transition-all"
+              disabled={isPending}
+              className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-medium hover:from-orange-700 hover:to-yellow-700 transition-all disabled:opacity-50"
             >
-              Register Service (2.5 STX)
+              {isPending ? "Registering..." : "Register Service (2.5 STX)"}
             </button>
           </div>
         </div>
@@ -113,9 +139,10 @@ export default function ServicesPage() {
             </div>
             <button
               onClick={handlePay}
-              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all"
+              disabled={isPending}
+              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all disabled:opacity-50"
             >
-              Pay for Service
+              {isPending ? "Processing..." : "Pay for Service"}
             </button>
           </div>
         </div>
@@ -130,15 +157,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Info Section */}
-      <div className="mt-8 bg-orange-50 rounded-2xl p-6">
-        <h3 className="text-lg font-bold text-orange-900 mb-2">How it works</h3>
-        <ul className="text-orange-800 space-y-2">
-          <li>• Register your service with a title and price (2.5 STX fee)</li>
-          <li>• Clients can find and pay for your service on-chain</li>
-          <li>• You receive 98.5% of the payment (1.5% platform fee)</li>
-          <li>• Toggle your service active/inactive anytime</li>
-        </ul>
-      </div>
+      <ServicesInfo />
     </div>
   );
 }
