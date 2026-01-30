@@ -83,13 +83,21 @@ export default function ServicesPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Price (STX)</label>
-              <input
-                type="number"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                placeholder="100"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
+              <div className="relative">
+                <input
+                  type="number"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  placeholder="100"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                />
+                <button 
+                  className="absolute right-2 top-2 text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded hover:bg-orange-200"
+                  onClick={() => alert("Market price fetcher unimplemented")}
+                >
+                  ESTIMATE
+                </button>
+              </div>
             </div>
             <div className="p-3 bg-orange-50 rounded-lg">
               <div className="flex justify-between text-sm">
