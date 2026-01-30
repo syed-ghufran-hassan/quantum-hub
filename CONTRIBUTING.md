@@ -1,63 +1,44 @@
 # Contributing to StackHub
 
-Thank you for your interest in contributing to StackHub! 🎉
+We welcome contributions to StackHub! This guide will help you get started.
 
-## How to Contribute
+## Development Setup
 
-### Reporting Bugs
+### Smart Contracts (Clarinet)
 
-1. Check existing [Issues](https://github.com/AdekunleBamz/stackhub/issues) to avoid duplicates
-2. Open a new issue with a clear title and description
-3. Include steps to reproduce, expected vs actual behavior
+1. Install [Clarinet](https://github.com/hirosystems/clarinet).
+2. Navigate to `stackhub-contracts/`.
+3. Run tests:
+   ```bash
+   clarinet test
+   ```
+4. Start a local Devnet (optional):
+   ```bash
+   clarinet integrate
+   ```
 
-### Suggesting Features
+### Frontend (Next.js)
 
-1. Open an issue with the `enhancement` label
-2. Describe the feature and its use case
-3. Discuss implementation approach if possible
+1. Navigate to `frontend/`.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000).
 
-### Pull Requests
+## Code Style
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Make your changes
-4. Run tests: `cd stackhub-contracts && npm test`
-5. Commit with clear messages: `git commit -m "feat: add new feature"`
-6. Push and open a Pull Request
+- **Frontend**: We use ESLint and Prettier. Run `npm run lint` before committing.
+- **Contracts**: Follow standard Clarity naming conventions (kebab-case).
 
-### Development Setup
+## Pull Request Process
 
-```bash
-# Clone the repo
-git clone https://github.com/AdekunleBamz/stackhub.git
-cd stackhub
-
-# Smart Contracts
-cd stackhub-contracts
-npm install
-npm test
-
-# Frontend
-cd ../frontend
-npm install
-npm run dev
-```
-
-### Code Style
-
-- **Smart Contracts**: Follow Clarity best practices
-- **Frontend**: Use TypeScript, follow existing patterns
-- **Commits**: Use conventional commits (feat:, fix:, docs:, etc.)
-
-### Testing
-
-- All smart contract changes must include tests
-- Ensure all existing tests pass before submitting
-
-## Questions?
-
-Feel free to open an issue for any questions or discussions.
-
----
-
-Thank you for helping improve StackHub! 🚀
+1. Fork the repository.
+2. Create a feature branch (`feat/my-feature`).
+3. Commit your changes.
+4. Push to the branch.
+5. Create a Pull Request targeting `main`.
