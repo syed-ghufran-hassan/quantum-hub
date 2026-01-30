@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { createToken } from "@/lib/contracts";
 
+/**
+ * Form component for creating new SIP-010 tokens.
+ * Handles input state, validation, and contract interaction.
+ */
 export function CreateTokenForm() {
   const [name, setName] = useState("");
   const [symbol, setSymbol] = useState("");
