@@ -19,7 +19,10 @@ export default function StakingPage() {
    */
   const handleStake = async () => {
     if (!stakeAmount) return alert("Please enter amount");
-    const amount = parseFloat(stakeAmount) * 1000000; // Convert to microstacks
+    const val = parseFloat(stakeAmount);
+    if (isNaN(val) || val <= 0) return alert("Amount must be positive");
+    
+    const amount = val * 1000000; // Convert to microstacks
     await stakeSTX(amount);
     setStakeAmount("");
   };
@@ -29,7 +32,10 @@ export default function StakingPage() {
    */
   const handleUnstake = async () => {
     if (!unstakeAmount) return alert("Please enter amount");
-    const amount = parseFloat(unstakeAmount) * 1000000;
+    const val = parseFloat(unstakeAmount);
+    if (isNaN(val) || val <= 0) return alert("Amount must be positive");
+
+    const amount = val * 1000000;
     await requestUnstake(amount);
     setUnstakeAmount("");
   };
