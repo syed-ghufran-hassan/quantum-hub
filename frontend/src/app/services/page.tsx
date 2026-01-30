@@ -14,6 +14,7 @@ export default function ServicesPage() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [serviceId, setServiceId] = useState("");
+  const [isPending, setIsPending] = useState(false);
 
   /**
    * Validates input and registers a new service.
@@ -21,10 +22,18 @@ export default function ServicesPage() {
    */
   const handleRegister = async () => {
     if (!title || !price) return alert("Please fill all fields");
-    const priceInMicrostacks = parseFloat(price) * 1000000;
-    await registerService(title, priceInMicrostacks);
-    setTitle("");
-    setPrice("");
+    const val = parseFloat(price);
+    if (isNaN(val) || val <= 0) return alert("Price must be positive");
+
+    setIsPending(true);
+    try {
+      const priceInMicrostacks = val * 1000000;
+      await registerService(title, priceInMicrostacks);
+      setTitle("");
+      setPrice("");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   /**
@@ -32,8 +41,14 @@ export default function ServicesPage() {
    */
   const handlePay = async () => {
     if (!serviceId) return alert("Please enter service ID");
-    await payForService(parseInt(serviceId));
-    setServiceId("");
+    
+    setIsPending(true);
+    try {
+      await payForService(parseInt(serviceId));
+      setServiceId("");
+    } finally {
+      setIsPending(false);
+    }
   };
 
   if (!connected) {
@@ -84,9 +99,10 @@ export default function ServicesPage() {
             </div>
             <button
               onClick={handleRegister}
-              className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-medium hover:from-orange-700 hover:to-yellow-700 transition-all"
+              disabled={isPending}
+              className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-medium hover:from-orange-700 hover:to-yellow-700 transition-all disabled:opacity-50"
             >
-              Register Service (2.5 STX)
+              {isPending ? "Registering..." : "Register Service (2.5 STX)"}
             </button>
           </div>
         </div>
@@ -113,9 +129,10 @@ export default function ServicesPage() {
             </div>
             <button
               onClick={handlePay}
-              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all"
+              disabled={isPending}
+              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all disabled:opacity-50"
             >
-              Pay for Service
+              {isPending ? "Processing..." : "Pay for Service"}
             </button>
           </div>
         </div>
