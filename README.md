@@ -42,6 +42,19 @@ StackHub is a comprehensive Stacks-based decentralized application (dApp) design
    npm run dev
    ```
 
+## Project Structure
+
+```
+stackhub/
+├── stackhub-contracts/    # Smart contracts (Clarinet project)
+│   ├── contracts/         # Clarity source code
+│   └── tests/             # TypeScript unit tests
+├── frontend/              # Next.js web application
+│   ├── src/app/           # App Router pages
+│   └── src/lib/           # Contract integration logic
+└── README.md              # Project documentation
+```
+
 ## License
 
 This project is licensed under the MIT License.
