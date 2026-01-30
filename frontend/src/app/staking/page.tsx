@@ -131,19 +131,25 @@ export default function StakingPage() {
       </div>
 
       {/* Fee Info */}
-      <div className="mt-8 bg-green-50 rounded-2xl p-6">
-        <h3 className="text-lg font-bold text-green-900 mb-2">Fee Structure</h3>
-        <div className="grid md:grid-cols-2 gap-4 text-green-800">
-          <div className="bg-white rounded-lg p-4">
-            <div className="font-medium">Normal Withdrawal</div>
-            <div className="text-2xl font-bold">0.5%</div>
-            <div className="text-sm">After ~1 day lock period</div>
-          </div>
-          <div className="bg-white rounded-lg p-4">
-            <div className="font-medium">Early Withdrawal</div>
-            <div className="text-2xl font-bold">2.5%</div>
-            <div className="text-sm">Before lock period ends</div>
-          </div>
+      <FeeStructure />
+    </div>
+  );
+}
+
+function FeeStructure() {
+  return (
+    <div className="mt-8 bg-green-50 rounded-2xl p-6">
+      <h3 className="text-lg font-bold text-green-900 mb-2">Fee Structure</h3>
+      <div className="grid md:grid-cols-2 gap-4 text-green-800">
+        <div className="bg-white rounded-lg p-4">
+          <div className="font-medium">Normal Withdrawal</div>
+          <div className="text-2xl font-bold">0.5%</div>
+          <div className="text-sm">After ~1 day lock period</div>
+        </div>
+        <div className="bg-white rounded-lg p-4">
+          <div className="font-medium">Early Withdrawal</div>
+          <div className="text-2xl font-bold">2.5%</div>
+          <div className="text-sm">Before lock period ends</div>
         </div>
       </div>
     </div>
