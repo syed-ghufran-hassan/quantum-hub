@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createToken } from "@/lib/contracts";
+import { useToast, transactionToasts } from "@/context/ToastContext";
 
 /**
  * Form component for creating new SIP-010 tokens.
@@ -13,17 +14,22 @@ export function CreateTokenForm() {
   const [decimals, setDecimals] = useState("6");
   const [supply, setSupply] = useState("");
   const [isPending, setIsPending] = useState(false);
+  const toast = useToast();
 
   const handleCreate = async () => {
-    if (!name || !symbol || !supply) return alert("Please fill all fields");
+    if (!name || !symbol || !supply) return toast.error("Error", "Please fill all fields");
     
+    transactionToasts.pending(toast);
     setIsPending(true);
     try {
         const totalSupply = parseInt(supply) * Math.pow(10, parseInt(decimals));
         await createToken(name, symbol, parseInt(decimals), totalSupply);
+        transactionToasts.success(toast);
         setName("");
         setSymbol("");
         setSupply("");
+    } catch (e) {
+      transactionToasts.error(toast);
     } finally {
         setIsPending(false);
     }
