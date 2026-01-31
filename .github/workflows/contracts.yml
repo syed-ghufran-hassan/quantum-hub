@@ -1,0 +1,29 @@
+name: Contracts CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'stackhub-contracts/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'stackhub-contracts/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Clarinet
+      uses: hirosystems/setup-clarinet@v1
+      with:
+        version: '2.4.0'
+
+    - name: Verify Clarinet Version
+      run: clarinet --version
+      
+    - name: Run Contract Tests
+      working-directory: ./stackhub-contracts
+      run: clarinet test
