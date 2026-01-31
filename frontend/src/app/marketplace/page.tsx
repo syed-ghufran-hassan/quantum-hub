@@ -4,6 +4,7 @@ import { useWallet } from "@/context/WalletContext";
 import { MintNFTForm } from "@/components/marketplace/MintNFTForm";
 import { ListNFTForm } from "@/components/marketplace/ListNFTForm";
 import { BuyNFTForm } from "@/components/marketplace/BuyNFTForm";
+import { PageContainer } from "@/components/layout/PageContainer";
 
 /**
  * NFT Marketplace Page.
@@ -24,7 +25,7 @@ export default function MarketplacePage() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <PageContainer maxWidth="max-w-6xl">
       <h1 className="text-4xl font-bold text-gray-900 mb-2">🎨 NFT Marketplace</h1>
       <p className="text-gray-600 mb-8">Mint, list, and trade NFTs with only 1.25% platform fee</p>
 
@@ -44,6 +45,6 @@ export default function MarketplacePage() {
           <li>• When sold, 1.25% goes to the platform, rest to you</li>
         </ul>
       </div>
-    </div>
+    </PageContainer>
   );
 }
