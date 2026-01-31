@@ -2,16 +2,25 @@
 
 import { useState } from "react";
 import { listNFT } from "@/lib/contracts";
+import { useToast, transactionToasts } from "@/context/ToastContext";
 
 export function ListNFTForm() {
   const [listTokenId, setListTokenId] = useState("");
   const [listPrice, setListPrice] = useState("");
+  const toast = useToast();
 
   const handleList = async () => {
-    if (!listTokenId || !listPrice) return alert("Please fill all fields");
-    await listNFT(parseInt(listTokenId), parseInt(listPrice) * 1000000);
-    setListTokenId("");
-    setListPrice("");
+    if (!listTokenId || !listPrice) return toast.error("Error", "Please fill all fields");
+    
+    transactionToasts.pending(toast);
+    try {
+      await listNFT(parseInt(listTokenId), parseInt(listPrice) * 1000000);
+      transactionToasts.success(toast);
+      setListTokenId("");
+      setListPrice("");
+    } catch (e) {
+      transactionToasts.error(toast);
+    }
   };
 
   return (

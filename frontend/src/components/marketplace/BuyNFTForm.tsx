@@ -2,14 +2,23 @@
 
 import { useState } from "react";
 import { buyNFT } from "@/lib/contracts";
+import { useToast, transactionToasts } from "@/context/ToastContext";
 
 export function BuyNFTForm() {
   const [buyTokenId, setBuyTokenId] = useState("");
+  const toast = useToast();
 
   const handleBuy = async () => {
-    if (!buyTokenId) return alert("Please enter token ID");
-    await buyNFT(parseInt(buyTokenId));
-    setBuyTokenId("");
+    if (!buyTokenId) return toast.error("Error", "Please enter token ID");
+    
+    transactionToasts.pending(toast);
+    try {
+      await buyNFT(parseInt(buyTokenId));
+      transactionToasts.success(toast);
+      setBuyTokenId("");
+    } catch (e) {
+      transactionToasts.error(toast);
+    }
   };
 
   return (

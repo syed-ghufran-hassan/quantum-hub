@@ -3,10 +3,11 @@
 import { ReactNode } from 'react';
 import { ReownProvider } from '@/context/ReownContext';
 import { WalletProvider } from '@/context/WalletContext';
+import { ToastProvider } from '@/context/ToastContext';
 
 /**
  * Application Global Provider
- * Wraps the app with Reown (AppKit) and Wallet contexts.
+ * Wraps the app with Reown (AppKit), Wallet, and Toast contexts.
  * Handles initial cookie state for server-side rendering support.
  */
 export function ContextProvider({ 
@@ -19,7 +20,9 @@ export function ContextProvider({
   return (
     <ReownProvider cookies={cookies}>
       <WalletProvider>
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
       </WalletProvider>
     </ReownProvider>
   );
