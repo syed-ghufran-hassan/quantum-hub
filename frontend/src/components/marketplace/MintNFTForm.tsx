@@ -2,14 +2,23 @@
 
 import { useState } from "react";
 import { mintNFT } from "@/lib/contracts";
+import { useToast, transactionToasts } from "@/context/ToastContext";
 
 export function MintNFTForm() {
   const [mintUri, setMintUri] = useState("");
+  const toast = useToast();
 
   const handleMint = async () => {
-    if (!mintUri) return alert("Please enter IPFS URI");
-    await mintNFT(mintUri);
-    setMintUri("");
+    if (!mintUri) return toast.error("Error", "Please enter IPFS URI");
+    
+    transactionToasts.pending(toast);
+    try {
+      await mintNFT(mintUri);
+      transactionToasts.success(toast);
+      setMintUri("");
+    } catch (e) {
+      transactionToasts.error(toast);
+    }
   };
 
   return (
