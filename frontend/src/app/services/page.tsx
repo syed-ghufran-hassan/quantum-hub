@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { useWallet } from "@/context/WalletContext";
-import { registerService, payForService } from "@/lib/contracts";
+import { ServicesInfo } from "@/components/services/ServicesInfo";
+import { RegisterServiceForm } from "@/components/services/RegisterServiceForm";
+import { PayServiceForm } from "@/components/services/PayServiceForm";
 
 /**
  * Service Registry Page.
@@ -11,47 +12,6 @@ import { registerService, payForService } from "@/lib/contracts";
  */
 export default function ServicesPage() {
   const { connected } = useWallet();
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [serviceId, setServiceId] = useState("");
-  const [isPending, setIsPending] = useState(false);
-
-  /**
-   * Validates input and registers a new service.
-   * Converts price to microSTX.
-   */
-  const handleRegister = async () => {
-    if (!title || !price) return alert("Please fill all fields");
-    const val = parseFloat(price);
-    if (isNaN(val) || val <= 0) return alert("Price must be positive");
-
-    setIsPending(true);
-    try {
-      const priceInMicrostacks = val * 1000000;
-      await registerService(title, priceInMicrostacks);
-      setTitle("");
-      setPrice("");
-    } finally {
-      setIsPending(false);
-    }
-  };
-
-  /**
-   * Processes payment for a registered service.
-   */
-  const handlePay = async () => {
-    if (!serviceId) return alert("Please enter service ID");
-    const id = parseInt(serviceId);
-    if (isNaN(id) || id < 0) return alert("Invalid Service ID");
-    
-    setIsPending(true);
-    try {
-      await payForService(id);
-      setServiceId("");
-    } finally {
-      setIsPending(false);
-    }
-  };
 
   if (!connected) {
     return (
@@ -68,84 +28,8 @@ export default function ServicesPage() {
       <p className="text-gray-600 mb-8">Offer and pay for services on-chain</p>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Register Service */}
-        <div className="bg-white rounded-2xl shadow-lg p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Register Service</h2>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Service Title</label>
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Web Development"
-                maxLength={64}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Price (STX)</label>
-              <div className="relative">
-                <input
-                  type="number"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  placeholder="100"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                />
-                <button 
-                  className="absolute right-2 top-2 text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded hover:bg-orange-200"
-                  onClick={() => alert("Market price fetcher unimplemented")}
-                >
-                  ESTIMATE
-                </button>
-              </div>
-            </div>
-            <div className="p-3 bg-orange-50 rounded-lg">
-              <div className="flex justify-between text-sm">
-                <span className="text-orange-800">Listing Fee</span>
-                <span className="text-orange-900 font-medium">2.5 STX</span>
-              </div>
-            </div>
-            <button
-              onClick={handleRegister}
-              disabled={isPending}
-              className="w-full bg-gradient-to-r from-orange-600 to-yellow-600 text-white py-3 rounded-lg font-medium hover:from-orange-700 hover:to-yellow-700 transition-all disabled:opacity-50"
-            >
-              {isPending ? "Registering..." : "Register Service (2.5 STX)"}
-            </button>
-          </div>
-        </div>
-
-        {/* Pay for Service */}
-        <div className="bg-white rounded-2xl shadow-lg p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Pay for Service</h2>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Service ID</label>
-              <input
-                type="number"
-                value={serviceId}
-                onChange={(e) => setServiceId(e.target.value)}
-                placeholder="1"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-              />
-            </div>
-            <div className="p-3 bg-green-50 rounded-lg">
-              <div className="flex justify-between text-sm">
-                <span className="text-green-800">Platform Fee</span>
-                <span className="text-green-900 font-medium">1.5%</span>
-              </div>
-            </div>
-            <button
-              onClick={handlePay}
-              disabled={isPending}
-              className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all disabled:opacity-50"
-            >
-              {isPending ? "Processing..." : "Pay for Service"}
-            </button>
-          </div>
-        </div>
+        <RegisterServiceForm />
+        <PayServiceForm />
       </div>
 
       {/* Services List Placeholder */}
