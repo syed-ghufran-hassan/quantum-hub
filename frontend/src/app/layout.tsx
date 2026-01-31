@@ -4,6 +4,7 @@ import "./globals.css";
 import { headers } from "next/headers";
 import { ContextProvider } from "./providers";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,10 +40,13 @@ export const metadata: Metadata = {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
       >
         <ContextProvider cookies={cookies}>
-          <Navbar />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ContextProvider>
       </body>
     </html>
