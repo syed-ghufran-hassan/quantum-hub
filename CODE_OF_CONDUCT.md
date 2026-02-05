@@ -1,28 +1,10 @@
-# Code of Conduct\nBe nice.
+# Contributor Covenant Code of Conduct
 
-### Section 1
-Added detail about feature 1 to ensure clarity for users.
+## Our Pledge
 
-### Section 2
-Added detail about feature 2 to ensure clarity for users.
-
-### Section 3
-Added detail about feature 3 to ensure clarity for users.
-
-### Section 4
-Added detail about feature 4 to ensure clarity for users.
-
-### Section 5
-Added detail about feature 5 to ensure clarity for users.
-
-### Section 6
-Added detail about feature 6 to ensure clarity for users.
-
-### Section 7
-Added detail about feature 7 to ensure clarity for users.
-
-### Section 8
-Added detail about feature 8 to ensure clarity for users.
-
-### Section 9
-Added detail about feature 9 to ensure clarity for users.
+In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to making participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, sex characteristics, gender identity and expression,
+level of experience, education, socio-economic status, nationality, personal
+appearance, race, religion, or sexual identity and orientation.

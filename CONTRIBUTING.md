@@ -1,44 +1,10 @@
 # Contributing to OrbitForge
 
-We welcome contributions to OrbitForge! This guide will help you get started.
+Thank you for considering contributing to OrbitForge!
 
-## Development Setup
-
-### Smart Contracts (Clarinet)
-
-1. Install [Clarinet](https://github.com/hirosystems/clarinet).
-2. Navigate to `stackhub-contracts/`.
-3. Run tests:
-   ```bash
-   clarinet test
-   ```
-4. Start a local Devnet (optional):
-   ```bash
-   clarinet integrate
-   ```
-
-### Frontend (Next.js)
-
-1. Navigate to `frontend/`.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:3000](http://localhost:3000).
-
-## Code Style
-
-- **Frontend**: We use ESLint and Prettier. Run `npm run lint` before committing.
-- **Contracts**: Follow standard Clarity naming conventions (kebab-case).
-
-## Pull Request Process
-
-1. Fork the repository.
-2. Create a feature branch (`feat/my-feature`).
-3. Commit your changes.
-4. Push to the branch.
-5. Create a Pull Request targeting `main`.
+1. Fork the repo and create your branch from `main`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Issue that pull request!
