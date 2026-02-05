@@ -1,60 +1,54 @@
-# StackHub
+# OrbitForge
 
-![Frontend CI](https://github.com/stackhub/stackhub/actions/workflows/frontend.yml/badge.svg)
-![Contracts CI](https://github.com/stackhub/stackhub/actions/workflows/contracts.yml/badge.svg)
-![License](https://img.shields.io/badge/license-MIT-blue)
+OrbitForge is a multi-service Stacks dApp suite that brings marketplace trading, service billing, staking, and token launches into one cohesive hub.
 
-## Overview
+## What OrbitForge Includes
 
-StackHub is a comprehensive Stacks-based decentralized application (dApp) designed to empower the Bitcoin economy. It integrates a suite of DeFi and utility services into a single platform.
-
-## Key Features
-
-- **NFT Marketplace**: Mint, list, and trade NFTs with low platform fees.
-- **Service Registry**: Decentralized registry for service providers to list offerings and receive payments on-chain.
-- **Staking Vault**: Secure STX staking mechanism with time-locked rewards.
-- **Token Launchpad**: One-click deployment of SIP-010 fungible tokens.
+- **NFT Marketplace** for minting, listings, and low-fee trades.
+- **Service Registry** to onboard providers and collect on-chain payments.
+- **Staking Vault** to lock STX and distribute rewards over time.
+- **Token Launchpad** to deploy SIP-010 assets with guardrails.
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js v18+
-- Clarinet (for contract development)
-- Stacks Wallet (Leather, Xverse)
+- Clarinet
+- Stacks wallet (Leather, Xverse)
 
-### Installation
+### Install
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/stackhub/stackhub.git
-   cd stackhub
-   ```
+```bash
+git clone https://github.com/floxxih/project-omega-hub.git
+cd project-omega-hub
+```
 
-2. Install Frontend Dependencies:
-   ```bash
-   cd frontend
-   npm install
-   ```
+### Frontend
 
-3. Run the Development Server:
-   ```bash
-   npm run dev
-   ```
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-## Project Structure
+### Contracts + Tests
+
+```bash
+cd stackhub-contracts
+npm install
+npm run test
+```
+
+## Repository Layout
 
 ```
-stackhub/
-├── stackhub-contracts/    # Smart contracts (Clarinet project)
-│   ├── contracts/         # Clarity source code
-│   └── tests/             # TypeScript unit tests
+project-omega-hub/
+├── stackhub-contracts/    # Smart contracts and tests
 ├── frontend/              # Next.js web application
-│   ├── src/app/           # App Router pages
-│   └── src/lib/           # Contract integration logic
 └── README.md              # Project documentation
 ```
 
 ## License
 
-This project is licensed under the MIT License.
+MIT

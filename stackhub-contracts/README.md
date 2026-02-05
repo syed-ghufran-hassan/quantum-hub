@@ -1,6 +1,6 @@
-# StackHub Smart Contracts
+# OrbitForge Smart Contracts
 
-This directory contains the Clarity smart contracts that power the StackHub platform.
+This directory contains the Clarity smart contracts that power the OrbitForge platform.
 
 ## Contracts Overview
 

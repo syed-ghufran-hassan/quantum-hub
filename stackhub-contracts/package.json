@@ -1,7 +1,7 @@
 {
-  "name": "stackhub-contracts-tests",
+  "name": "orbitforge-contracts-tests",
   "version": "1.0.0",
-  "description": "Smart Contract Tests and Scripts for StackHub",
+  "description": "Smart contract tests and scripts for OrbitForge",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "test:report": "vitest run -- --coverage --costs",
     "test:watch": "chokidar \"tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm run test:report\""
   },
-  "author": "StackHub Team",
+  "author": "OrbitForge Team",
   "license": "ISC",
   "keywords": [
     "stacks",

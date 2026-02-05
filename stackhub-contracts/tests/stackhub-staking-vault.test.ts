@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { Cl } from "@stacks/transactions";
 
 /**
- * Test Suite: StackHub Staking Vault
+ * Test Suite: OrbitForge Staking Vault
  * Validates staking logic, unstake requests, and time-lock mechanisms.
  * Checks mathematical accuracy of potential rewards (mocked).
  */
@@ -12,7 +12,7 @@ const deployer = accounts.get("deployer")!;
 const wallet1 = accounts.get("wallet_1")!;
 const wallet2 = accounts.get("wallet_2")!;
 
-describe("StackHub Staking Vault", () => {
+describe("OrbitForge Staking Vault", () => {
   describe("stake", () => {
     it("should stake STX successfully", () => {
       const { result } = simnet.callPublicFn(
