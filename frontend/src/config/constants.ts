@@ -1,5 +1,5 @@
 /**
- * OrbitForge Constants
+ * StackHub Constants
  * Centralized configuration values for the platform.
  */
 

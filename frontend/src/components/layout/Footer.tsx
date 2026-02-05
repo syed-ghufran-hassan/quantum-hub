@@ -7,17 +7,17 @@ export function Footer() {
             <div className="w-6 h-6 bg-gray-200 rounded-md flex items-center justify-center">
               <span className="text-gray-600 font-bold text-xs">SH</span>
             </div>
-            <span className="text-gray-900 font-semibold">OrbitForge</span>
+            <span className="text-gray-900 font-semibold">StackHub</span>
           </div>
           
           <div className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} OrbitForge. Built on Stacks.
+            &copy; {new Date().getFullYear()} StackHub. Built on Stacks.
           </div>
 
           <div className="flex space-x-6 text-sm text-gray-600">
             <a href="#" className="hover:text-gray-900">Terms</a>
             <a href="#" className="hover:text-gray-900">Privacy</a>
-            <a href="https://github.com/orbitforge" className="hover:text-gray-900">GitHub</a>
+            <a href="https://github.com/stackhub/stackhub" className="hover:text-gray-900">GitHub</a>
           </div>
         </div>
       </div>
