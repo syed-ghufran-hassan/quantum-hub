@@ -1,8 +1,8 @@
 {
-  "name": "stackhub-frontend",
+  "name": "orbitforge-frontend",
   "version": "1.0.0",
-  "description": "Official Frontend for StackHub dApp",
-  "author": "StackHub Team",
+  "description": "Official frontend for OrbitForge dApp",
+  "author": "OrbitForge Team",
   "license": "MIT",
   "private": true,
   "scripts": {

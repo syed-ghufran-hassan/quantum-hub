@@ -12,9 +12,9 @@ import { wagmiAdapter, projectId, networks } from '@/config/wagmi';
  * Displayed to users when connecting their wallets.
  */
 const metadata = {
-  name: 'StackHub',
+  name: 'OrbitForge',
   description: 'DeFi Platform on Stacks - NFT Marketplace, Token Launchpad, Staking & Services',
-  url: typeof window !== 'undefined' ? window.location.origin : 'https://stackhub.app',
+  url: typeof window !== 'undefined' ? window.location.origin : 'https://orbitforge.app',
   icons: ['/logo.png'],
 };
 

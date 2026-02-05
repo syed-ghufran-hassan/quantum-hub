@@ -1,6 +1,6 @@
-# Contributing to StackHub
+# Contributing to OrbitForge
 
-We welcome contributions to StackHub! This guide will help you get started.
+We welcome contributions to OrbitForge! This guide will help you get started.
 
 ## Development Setup
 
