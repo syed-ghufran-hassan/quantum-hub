@@ -1,10 +1,9 @@
+# EditorConfig helps maintain consistent coding styles for multiple developers
 root = true
-rule_1 = true
-rule_2 = true
-rule_3 = true
-rule_4 = true
-rule_5 = true
-rule_6 = true
-rule_7 = true
-rule_8 = true
-rule_9 = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 2
