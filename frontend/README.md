@@ -1,6 +1,6 @@
-# StackHub Frontend
+# OrbitForge Frontend
 
-This is the Next.js 16 frontend for the StackHub platform.
+This is the Next.js 16 frontend for the OrbitForge platform.
 
 ## Features
 

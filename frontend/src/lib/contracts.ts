@@ -9,7 +9,7 @@ import {
 import { CONTRACTS } from "@/config/contracts";
 
 /**
- * Mint a new NFT on the StackHub marketplace.
+ * Mint a new NFT on the OrbitForge marketplace.
  * @param uri - The metadata URI for the NFT.
  * Initiates a contract call to `stackhub-nft-marketplace.mint`.
  */

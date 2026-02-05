@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { Cl } from "@stacks/transactions";
 
 /**
- * Test Suite: StackHub Service Registry
+ * Test Suite: OrbitForge Service Registry
  * Tests service registration, updates, status toggling, and payments.
  * Ensures platform fees are collected correctly.
  */
@@ -12,7 +12,7 @@ const deployer = accounts.get("deployer")!;
 const wallet1 = accounts.get("wallet_1")!;
 const wallet2 = accounts.get("wallet_2")!;
 
-describe("StackHub Service Registry", () => {
+describe("OrbitForge Service Registry", () => {
   describe("register-service", () => {
     it("should register a service and pay fee", () => {
       const { result } = simnet.callPublicFn(
