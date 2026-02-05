@@ -6,7 +6,7 @@ import { FEES } from "@/config/contracts";
 
 /**
  * Landing Page Component.
- * Displays the main features of the OrbitForge platform.
+ * Displays the main features of the StackHub platform.
  */
 export default function HomePage() {
   const { connected } = useWallet();
@@ -54,7 +54,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">OrbitForge</span>
+          Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">StackHub</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           Your all-in-one DeFi platform on Stacks. Trade NFTs, launch tokens, stake STX, and access services - all with minimal fees.

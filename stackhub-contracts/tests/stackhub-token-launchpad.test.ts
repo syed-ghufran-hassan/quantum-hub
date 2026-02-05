@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { Cl } from "@stacks/transactions";
 
 /**
- * Test Suite: OrbitForge Token Launchpad
+ * Test Suite: StackHub Token Launchpad
  * Verifies token creation (SIP-010 derived), supply management, and creation fees.
  * Ensures metadata is stored correctly.
  */
@@ -12,7 +12,7 @@ const deployer = accounts.get("deployer")!;
 const wallet1 = accounts.get("wallet_1")!;
 const wallet2 = accounts.get("wallet_2")!;
 
-describe("OrbitForge Token Launchpad", () => {
+describe("StackHub Token Launchpad", () => {
   describe("create-token", () => {
     it("should create a token and pay fee", () => {
       const { result } = simnet.callPublicFn(

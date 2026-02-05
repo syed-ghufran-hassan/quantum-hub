@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OrbitForge | Premium DeFi on Stacks",
+  title: "StackHub | Premium DeFi on Stacks",
   description: "The all-in-one platform for NFTs, Tokens, Staking, and Services on the Stacks blockchain.",
   icons: {
     icon: "/logo.png",

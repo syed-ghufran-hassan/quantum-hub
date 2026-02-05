@@ -73,7 +73,7 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   const connectStacks = () => {
     showConnect({
       appDetails: {
-        name: "OrbitForge",
+        name: "StackHub",
         icon: typeof window !== "undefined" ? window.location.origin + "/logo.png" : "/logo.png",
       },
       onFinish: () => {
@@ -122,3 +122,4 @@ export function WalletProvider({ children }: { children: ReactNode }) {
 }
 
 export const useWallet = () => useContext(WalletContext);
+

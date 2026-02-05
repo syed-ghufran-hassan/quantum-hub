@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { Cl } from "@stacks/transactions";
 
 /**
- * Test Suite: OrbitForge NFT Marketplace
+ * Test Suite: StackHub NFT Marketplace
  * Covers minting, listing, buying, and unlisting functionality.
  * Verifies fee transfers and ownership changes.
  */
@@ -12,7 +12,7 @@ const deployer = accounts.get("deployer")!;
 const wallet1 = accounts.get("wallet_1")!;
 const wallet2 = accounts.get("wallet_2")!;
 
-describe("OrbitForge NFT Marketplace", () => {
+describe("StackHub NFT Marketplace", () => {
   describe("mint", () => {
     it("should mint an NFT successfully", () => {
       const { result } = simnet.callPublicFn(

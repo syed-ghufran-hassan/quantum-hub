@@ -1,5 +1,5 @@
 /**
- * OrbitForge Type Definitions
+ * StackHub Type Definitions
  * Shared TypeScript interfaces for the platform.
  */
 
