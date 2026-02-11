@@ -2,3 +2,6 @@
 
 ## Purpose
 Implementation plan for Token Vesting.
+
+## Scope
+Frontend and integration layer.
