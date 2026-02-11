@@ -1,1 +1,3 @@
-export const isValid = () => true;
+export const validateTestSuite = (data: any): boolean => {
+  return !!data;
+};
