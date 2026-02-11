@@ -52,3 +52,4 @@ project-omega-hub/
 ## License
 
 MIT
+- [Token Vesting](./docs/features/FEATURE_49.md)
