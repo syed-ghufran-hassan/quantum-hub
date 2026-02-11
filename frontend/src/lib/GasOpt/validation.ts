@@ -1,1 +1,3 @@
-export const isValid = () => true;
+export const validateGasOpt = (data: any): boolean => {
+  return !!data;
+};
