@@ -53,4 +53,9 @@ project-omega-hub/
 
 MIT
 - [Token Vesting](./docs/features/FEATURE_49.md)
+- [Gas Optimization](./docs/features/FEATURE_54.md)
+- [Smart Contract Tests](./docs/features/FEATURE_53.md)
+- [Social Features](./docs/features/FEATURE_52.md)
+- [Mobile App Core](./docs/features/FEATURE_51.md)
+- [Bridge Integration](./docs/features/FEATURE_50.md)
 - [NFT Lending](./docs/features/FEATURE_48.md)
