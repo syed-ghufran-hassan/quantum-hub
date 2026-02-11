@@ -1,1 +1,4 @@
-export const NFTLendingService = {};
+export interface INFTLending {
+  id: string;
+  timestamp: number;
+}
