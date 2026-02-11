@@ -1,1 +1,3 @@
-export const isValid = () => true;
+export const validateBridge = (data: any): boolean => {
+  return !!data;
+};
