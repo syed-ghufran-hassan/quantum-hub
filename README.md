@@ -52,3 +52,4 @@ project-omega-hub/
 ## License
 
 MIT
+- [NFT Lending](./docs/features/FEATURE_48.md)
