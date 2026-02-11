@@ -52,6 +52,7 @@ project-omega-hub/
 ## License
 
 MIT
+- [Smart Contract Tests](./docs/features/FEATURE_53.md)
 - [Social Features](./docs/features/FEATURE_52.md)
 - [Mobile App Core](./docs/features/FEATURE_51.md)
 - [Bridge Integration](./docs/features/FEATURE_50.md)
