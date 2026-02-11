@@ -1,1 +1,4 @@
-export const VestingService = {};
+export interface IVesting {
+  id: string;
+  timestamp: number;
+}
