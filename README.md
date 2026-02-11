@@ -52,6 +52,7 @@ project-omega-hub/
 ## License
 
 MIT
+- [Social Features](./docs/features/FEATURE_52.md)
 - [Mobile App Core](./docs/features/FEATURE_51.md)
 - [Bridge Integration](./docs/features/FEATURE_50.md)
 - [NFT Lending](./docs/features/FEATURE_48.md)
