@@ -1,5 +1,14 @@
 import React from 'react';
 
-export const BridgeView = () => {
-  return <div className="p-4 border rounded">Bridge Integration</div>;
+interface Props {
+  className?: string;
+}
+
+export const BridgeView = ({ className }: Props) => {
+  return (
+    <div className={`p-4 border rounded ${className}`}>
+      <h2 className="text-xl font-bold mb-2">Bridge Integration</h2>
+      <div className="text-gray-500">Feature Active</div>
+    </div>
+  );
 };
