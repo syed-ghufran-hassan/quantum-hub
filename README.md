@@ -52,3 +52,4 @@ project-omega-hub/
 ## License
 
 MIT
+- [Social Features](./docs/features/FEATURE_52.md)
