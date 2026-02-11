@@ -52,4 +52,5 @@ project-omega-hub/
 ## License
 
 MIT
+- [Bridge Integration](./docs/features/FEATURE_50.md)
 - [NFT Lending](./docs/features/FEATURE_48.md)
