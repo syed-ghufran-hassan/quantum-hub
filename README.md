@@ -52,3 +52,4 @@ project-omega-hub/
 ## License
 
 MIT
+- [Smart Contract Tests](./docs/features/FEATURE_53.md)
