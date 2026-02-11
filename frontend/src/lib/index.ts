@@ -1,3 +1,4 @@
+export * from './GasOpt';
 export * from './TestSuite';
 export * from './Social';
 export * from './Mobile';

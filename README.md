@@ -52,6 +52,7 @@ project-omega-hub/
 ## License
 
 MIT
+- [Gas Optimization](./docs/features/FEATURE_54.md)
 - [Smart Contract Tests](./docs/features/FEATURE_53.md)
 - [Social Features](./docs/features/FEATURE_52.md)
 - [Mobile App Core](./docs/features/FEATURE_51.md)
