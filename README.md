@@ -52,6 +52,7 @@ project-omega-hub/
 ## License
 
 MIT
+- [Token Vesting](./docs/features/FEATURE_49.md)
 - [Gas Optimization](./docs/features/FEATURE_54.md)
 - [Smart Contract Tests](./docs/features/FEATURE_53.md)
 - [Social Features](./docs/features/FEATURE_52.md)
