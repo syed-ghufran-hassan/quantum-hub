@@ -1,1 +1,4 @@
-export const BridgeService = {};
+export interface IBridge {
+  id: string;
+  timestamp: number;
+}
