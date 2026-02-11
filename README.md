@@ -53,3 +53,4 @@ project-omega-hub/
 
 MIT
 - [Token Vesting](./docs/features/FEATURE_49.md)
+- [NFT Lending](./docs/features/FEATURE_48.md)
