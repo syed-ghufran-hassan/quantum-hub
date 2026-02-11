@@ -52,3 +52,4 @@ project-omega-hub/
 ## License
 
 MIT
+- [Mobile App Core](./docs/features/FEATURE_51.md)
