@@ -1,1 +1,4 @@
-export const GasOptService = {};
+export interface IGasOpt {
+  id: string;
+  timestamp: number;
+}
