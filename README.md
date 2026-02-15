@@ -1,8 +1,8 @@
-# OrbitForge
+# CipherHub
 
-OrbitForge is a multi-service Stacks dApp suite that brings marketplace trading, service billing, staking, and token launches into one cohesive hub.
+CipherHub is a multi-service Stacks dApp suite that brings marketplace trading, service billing, staking, and token launches into one cohesive hub.
 
-## What OrbitForge Includes
+## What CipherHub Includes
 
 - **NFT Marketplace** for minting, listings, and low-fee trades.
 - **Service Registry** to onboard providers and collect on-chain payments.
@@ -20,8 +20,8 @@ OrbitForge is a multi-service Stacks dApp suite that brings marketplace trading,
 ### Install
 
 ```bash
-git clone https://github.com/floxxih/project-omega-hub.git
-cd project-omega-hub
+git clone https://github.com/stableronaldox/cipher-hub.git
+cd cipher-hub
 ```
 
 ### Frontend
