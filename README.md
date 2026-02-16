@@ -1,13 +1,13 @@
-# OrbitForge
+# QuantumHub
 
-OrbitForge is a multi-service Stacks dApp suite that brings marketplace trading, service billing, staking, and token launches into one cohesive hub.
+QuantumHub is a multi-service Stacks dApp suite that brings marketplace trading, service billing, staking, and token launches into one unified quantum-powered ecosystem.
 
-## What OrbitForge Includes
+## What QuantumHub Includes
 
-- **NFT Marketplace** for minting, listings, and low-fee trades.
-- **Service Registry** to onboard providers and collect on-chain payments.
-- **Staking Vault** to lock STX and distribute rewards over time.
-- **Token Launchpad** to deploy SIP-010 assets with guardrails.
+- **NFT Marketplace** for minting, listings, and low-fee trades
+- **Service Registry** to onboard providers and collect on-chain payments
+- **Staking Vault** to lock STX and distribute rewards over time
+- **Token Launchpad** to deploy SIP-010 assets with guardrails
 
 ## Getting Started
 
@@ -20,8 +20,8 @@ OrbitForge is a multi-service Stacks dApp suite that brings marketplace trading,
 ### Install
 
 ```bash
-git clone https://github.com/floxxih/project-omega-hub.git
-cd project-omega-hub
+git clone https://github.com/doej/quantum-hub.git
+cd quantum-hub
 ```
 
 ### Frontend
@@ -43,19 +43,22 @@ npm run test
 ## Repository Layout
 
 ```
-project-omega-hub/
+quantum-hub/
 ├── stackhub-contracts/    # Smart contracts and tests
 ├── frontend/              # Next.js web application
 └── README.md              # Project documentation
 ```
 
+## Key Features
+
+- Token Vesting with flexible schedules
+- Gas Optimization for cost-efficient transactions
+- Smart Contract Tests for security assurance
+- Social Features for community engagement
+- Mobile App Core for on-the-go access
+- Bridge Integration for cross-chain support
+- NFT Lending for liquidity solutions
+
 ## License
 
 MIT
-- [Token Vesting](./docs/features/FEATURE_49.md)
-- [Gas Optimization](./docs/features/FEATURE_54.md)
-- [Smart Contract Tests](./docs/features/FEATURE_53.md)
-- [Social Features](./docs/features/FEATURE_52.md)
-- [Mobile App Core](./docs/features/FEATURE_51.md)
-- [Bridge Integration](./docs/features/FEATURE_50.md)
-- [NFT Lending](./docs/features/FEATURE_48.md)
